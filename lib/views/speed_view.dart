@@ -11,7 +11,7 @@ class SpeedometerPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) {
         final vm = SpeedViewModel();
-        vm.init(context);
+        vm.init();
         return vm;
       },
       child: Scaffold(
