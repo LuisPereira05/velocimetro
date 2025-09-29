@@ -50,13 +50,23 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                           minimum: 0,
                           maximum: 180,
                           ranges: <GaugeRange>[
-                            GaugeRange(startValue: 0, endValue: 60, color: Colors.green),
-                            GaugeRange(startValue: 60, endValue: 120, color: Colors.orange),
-                            GaugeRange(startValue: 120, endValue: 180, color: Colors.red),
+                            GaugeRange(
+                              startValue: 0,
+                              endValue: 60,
+                              color: Colors.green,
+                            ),
+                            GaugeRange(
+                              startValue: 60,
+                              endValue: 120,
+                              color: Colors.orange,
+                            ),
+                            GaugeRange(
+                              startValue: 120,
+                              endValue: 180,
+                              color: Colors.red,
+                            ),
                           ],
-                          pointers: <GaugePointer>[
-                            NeedlePointer(value: speed),
-                          ],
+                          pointers: <GaugePointer>[NeedlePointer(value: speed)],
                           annotations: <GaugeAnnotation>[
                             GaugeAnnotation(
                               widget: Text(
@@ -64,7 +74,9 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
-                                  color: isDarkMode ? Colors.white : Colors.black,
+                                  color: isDarkMode
+                                      ? Colors.white
+                                      : Colors.black,
                                 ),
                               ),
                               angle: 90,
@@ -93,7 +105,12 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                         isDarkMode = !isDarkMode;
                       });
                     },
-                    child: Text(isDarkMode ? "Modo Claro" : "Modo Escuro"),
+                    child: Transform.scale(
+                      scaleY: isMirrored
+                          ? -1
+                          : 1, // desfaz o espelho só no texto
+                      child: Text(isDarkMode ? "Modo Mobile" : "Modo HUD"),
+                    ),
                   ),
                 ],
               );
