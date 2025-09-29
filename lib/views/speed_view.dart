@@ -17,6 +17,10 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Get screen orientation using MediaQuery
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
+
     return ChangeNotifierProvider(
       create: (_) {
         final vm = SpeedViewModel();
@@ -24,9 +28,7 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
         return vm;
       },
       child: Scaffold(
-        backgroundColor: isDarkMode
-            ? Colors.black
-            : Colors.white, // Set background color based on mode
+        backgroundColor: isDarkMode ? Colors.black : Colors.white,
         appBar: AppBar(
           title: const Text("Velocímetro"),
           backgroundColor: isDarkMode ? Colors.black : Colors.blue,
@@ -39,9 +41,17 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
 
               return Transform(
                 alignment: Alignment.center,
-                transform: isMirrored
-                    ? Matrix4.rotationY(3.14159)
-                    : Matrix4.identity(), // Mirror transformation
+                // When in landscape, rotate 90 degrees and apply mirroring if needed
+                transform: isLandscape
+                    ? (isMirrored
+                            ? Matrix4.rotationZ(
+                                3.14159 / 2,
+                              ) // Rotate 90 degrees for "panoramic"
+                            : Matrix4.rotationZ(
+                                3.14159 / 2,
+                              ) // Rotate 90 degrees without mirroring
+                        ..scale(-1, 1, 1)) // Apply mirroring if needed
+                    : Matrix4.identity(), // No transformation in portrait mode
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -82,8 +92,7 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                     fontWeight: FontWeight.bold,
                                     color: isDarkMode
                                         ? Colors.white
-                                        : Colors
-                                              .black, // Text color based on mode
+                                        : Colors.black,
                                   ),
                                 ),
                                 angle: 90,
@@ -100,26 +109,23 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                       "Hodômetro: ${odometer.toStringAsFixed(2)} km",
                       style: TextStyle(
                         fontSize: 24,
-                        fontFeatures: [
-                          FontFeature.tabularFigures(),
-                        ], // números alinhados
-                        color: isDarkMode
-                            ? Colors.white
-                            : Colors.black, // Text color based on mode
+                        fontFeatures: [FontFeature.tabularFigures()],
+                        color: isDarkMode ? Colors.white : Colors.black,
                       ),
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        // Toggle the mirror effect and the dark mode
                         setState(() {
-                          isMirrored = !isMirrored;
-                          isDarkMode = !isDarkMode;
+                          isMirrored = !isMirrored; // Toggle the mirror effect
+                          isDarkMode = !isDarkMode; // Toggle dark mode
                         });
                       },
                       child: Text(
-                        isDarkMode ? "Modo Claro" : "Modo Escuro",
-                      ), // Change button text based on the current mode
+                        isDarkMode
+                            ? (isLandscape ? "Modo Dashboard" : "Modo Mobile")
+                            : (isLandscape ? "Modo Dashboard" : "Modo Mobile"),
+                      ),
                     ),
                   ],
                 ),
