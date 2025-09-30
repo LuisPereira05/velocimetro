@@ -46,3 +46,27 @@ Um aplicativo de **velocímetro digital** desenvolvido em Flutter, com suporte a
    cd velocimetro
    flutter devices
    flutter run -d <device id>
+   ```
+## Contribuindo
+
+Contribuições são muito bem-vindas! Para colaborar com o projeto, siga as etapas abaixo:
+
+1. **Fork** este repositório.
+2. Crie uma nova **branch** com a sua funcionalidade ou correção:
+
+   ```bash
+   git checkout -b minha-contribuicao
+   ```
+3. Faça suas alterações e commit:
+   ```
+   git commit -m "Adiciona nova funcionalidade"
+   ```
+4. Envie sua branch para o seu fork:
+   ```
+   git push origin minha-contribuicao
+   ```
+
+5. Abra um Pull Request para o repositório original e descreva suas mudanças.
+
+Antes de enviar seu PR, verifique se o código está limpo, bem documentado e, se possível, com testes.
+
