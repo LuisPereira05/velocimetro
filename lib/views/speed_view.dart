@@ -126,8 +126,9 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                           isDarkMode = !isDarkMode;
                                         });
                                       },
-                                      child: Text(
-                                        isDarkMode ? 'Modo Mobile' : 'Modo HUD',
+                                      child: Transform.scale(
+                                          child: Text(isDarkMode ? 'Modo Mobile' : 'Modo HUD'),
+                                          scaleY: isMirrored ? -1 : 1,
                                       ),
                                     ),
                                     ElevatedButton.icon(
@@ -136,7 +137,7 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                         vm.resetTrip();
                                       },
                                       icon: const Icon(Icons.refresh),
-                                      label: const Text('Reset'),
+                                      label: Transform.scale(child: Text('Reset'), scaleY: isMirrored ? -1 : 1,),
                                     ),
                                   ],
                                 ),
@@ -223,8 +224,9 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                   isDarkMode = !isDarkMode;
                                 });
                               },
-                              child: Text(
-                                isDarkMode ? 'Modo Mobile' : 'Modo HUD',
+                              child: Transform.scale(
+                                  child: Text(isDarkMode ? 'Modo Mobile' : 'Modo HUD'),
+                                  scaleY: isMirrored ? -1 : 1,
                               ),
                             ),
                             ElevatedButton.icon(
@@ -233,7 +235,7 @@ class _SpeedometerPageState extends State<SpeedometerPage> {
                                 vm.resetTrip();
                               },
                               icon: const Icon(Icons.refresh),
-                              label: const Text('Reset'),
+                              label: Transform.scale(child: Text('Reset'), scaleY: isMirrored ? -1 : 1,),
                             ),
                           ],
                         ),
