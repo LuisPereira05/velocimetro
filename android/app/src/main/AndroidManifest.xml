@@ -7,7 +7,7 @@
     
     
     <application
-        android:label="velocimetro"
+        android:label="HUDSpeedometerLCMR"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

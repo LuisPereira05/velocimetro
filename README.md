@@ -42,8 +42,8 @@ Um aplicativo de **velocímetro digital** desenvolvido em Flutter, com suporte a
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/LuisPereira05/velocimetro.git
-   cd velocimetro
+   git clone https://github.com/LuisPereira05/HUDSpeedometerLCMR.git
+   cd HUDSpeedometerLCMR
    flutter devices
    flutter run -d <device id>
    ```

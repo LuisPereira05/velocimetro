@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
-import 'package:velocimetro/views/speed_view.dart';
+import 'package:HUDSpeedometerLCMR/views/speed_view.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

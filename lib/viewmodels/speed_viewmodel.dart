@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:velocimetro/models/speed.dart';
+import 'package:HUDSpeedometerLCMR/models/speed.dart';
 
 class SpeedViewModel extends ChangeNotifier {
   Speed? _currentSpeed;

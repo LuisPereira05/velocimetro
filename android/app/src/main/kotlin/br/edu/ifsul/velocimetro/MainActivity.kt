@@ -1,4 +1,4 @@
-package br.edu.ifsul.velocimetro
+package br.com.rafaelamorim.speedometerlcmr
 
 import io.flutter.embedding.android.FlutterActivity
 
