@@ -28,12 +28,12 @@ We may update this privacy policy from time to time. Continued use of the app af
 
 ## Português
 
-# Política de Privacidade do Velocímetro
+# Política de Privacidade do LM - HUD Speedometer
 
 **Última atualização:** 30 de novembro de 2025
 
 ## Visão Geral
-Velocímetro é um aplicativo de velocímetro que exibe sua velocidade atual usando o GPS do seu dispositivo.
+LM - HUD Speedometer é um aplicativo de velocímetro que exibe sua velocidade atual usando o GPS do seu dispositivo.
 
 ## Coleta e Uso de Dados
 - **Dados de Localização**: Acessamos a localização GPS do seu dispositivo apenas para calcular e exibir sua velocidade atual em tempo real.
@@ -52,12 +52,12 @@ Podemos atualizar esta política de privacidade periodicamente. O uso continuado
 
 ## Español
 
-# Política de Privacidad de Velocímetro
+# Política de Privacidad de LM - HUD Speedometer
 
 **Última actualización:** 30 de noviembre de 2025
 
 ## Descripción General
-Velocímetro es una aplicación de velocímetro que muestra tu velocidad actual usando el GPS de tu dispositivo.
+LM - HUD Speedometer es una aplicación de velocímetro que muestra tu velocidad actual usando el GPS de tu dispositivo.
 
 ## Recopilación y Uso de Datos
 - **Datos de Ubicación**: Accedemos a la ubicación GPS de tu dispositivo únicamente para calcular y mostrar tu velocidad actual en tiempo real.
